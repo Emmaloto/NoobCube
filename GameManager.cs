@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
     public TextMeshProUGUI cashEarned;
     public int cubePoints;
 
+    public int jumpsGotten = 0; // Store number of jumps so other classes can access
 
     private void Start()
     {
@@ -50,6 +51,8 @@ public class GameManager : MonoBehaviour {
 
         // Save score of current level
         PlayerPrefs.SetInt("Cube Points", cubePoints + newPoints);
+
+        FindObjectOfType<AudioManager>().Play("WinGame");
 
     }
 }

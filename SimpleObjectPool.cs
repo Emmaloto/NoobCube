@@ -31,7 +31,7 @@ public class SimpleObjectPool : MonoBehaviour
         }
 
         // put the instance in the root of the scene and enable it
-        spawnedGameObject.transform.SetParent(null);
+        spawnedGameObject.transform.SetParent(null, false);
         spawnedGameObject.SetActive(true);
 
         // return a reference to the instance
@@ -47,6 +47,7 @@ public class SimpleObjectPool : MonoBehaviour
         if (pooledObject != null && pooledObject.pool == this)
         {
             // make the instance a child of this and disable it
+            //toReturn.transform.SetParent(transform, false);
             toReturn.transform.SetParent(transform, false);
             toReturn.SetActive(false);
 

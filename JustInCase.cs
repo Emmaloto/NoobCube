@@ -89,6 +89,40 @@ public class JustInCase : MonoBehaviour {
         }
 
     }
+
+
 */
+
+    // Use this for initialization
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+            ActivatePower(other);
+
+    }
+
+    public void ActivatePower(Collider player)
+    {
+        /*
+        Debug.Log("Power obtained!");
+
+        // Spawn Effect
+        Instantiate(pickupEffect, transform.position, transform.rotation);
+
+        // Change Player
+        //Instantiate(pickupEffect, player.transform.position, player.transform.rotation);
+        playerInfo.jumps = playerInfo.jumps + 1;
+        jumpNo.SetText("" + playerInfo.jumps);
+
+        // Remove Object
+        Destroy(gameObject);
+
+                if (activated)
+        {
+            Instantiate(pickupEffect, play.transform.position, play.transform.rotation);
+
+        }
+        */
+    }
 
 }

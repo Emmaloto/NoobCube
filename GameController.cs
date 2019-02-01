@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+//using UnityEditor;
 
 // Used for saving game data accross scenes
 public class GameController : MonoBehaviour {
 
     public Material skin;
+
     public static GameController control;
 
     private void Awake()
     {
+        //skin = (Material)AssetDatabase.LoadAssetAtPath("Assets/Photos + Mats/Materials/PlayerMat default.mat", typeof(Material));
         if (control == null)
         {
             DontDestroyOnLoad(gameObject);

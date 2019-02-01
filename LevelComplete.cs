@@ -3,9 +3,13 @@ using UnityEngine;
 
 public class LevelComplete : MonoBehaviour {
 
+    public bool loadCustomLevel = false;
+    public int sceneIndex;
+
     public void LoadNextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (loadCustomLevel) SceneManager.LoadScene(sceneIndex);
+        else SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 }
