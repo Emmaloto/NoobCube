@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
@@ -56,3 +57,38 @@ public class GameManager : MonoBehaviour {
 
     }
 }
+=======
+﻿using UnityEngine.SceneManagement;
+using UnityEngine;
+
+public class GameManager : MonoBehaviour {
+
+    bool gameEnded = false;
+    public float timeDelay = 1f;
+
+    public GameObject completeLevelUI;
+
+    public void EndGame()
+    {
+        // Gets game over to display only once
+        if (!gameEnded)
+        {
+            Debug.Log("Game Over");
+            gameEnded = true;
+            Invoke("Restart", timeDelay);
+        }
+    }
+
+    void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void CompleteLevel()
+    {
+        //Debug.Log("Level 1 Complete");
+
+        completeLevelUI.SetActive(true);
+    }
+}
+>>>>>>> 141f62bd46554ab52206fb4b99fffb7aa48d87d8
